@@ -24,6 +24,9 @@ Hi, my name is Fernando and currently living in Dourados, Brazil. At the moment 
 <code>...</code> 
 
 
+## 👯 Communities
+- Code For The Win - BECAUSE CODE MIGHT CHANGE REALITIES  [FTW Code](https://twitter.com/FTW_Code)
+
 
 
 ## 📫 Contact Me
