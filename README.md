@@ -28,6 +28,6 @@ Hi, my name is Fernando and currently living in Dourados, Brazil. At the moment 
 
 ## 📫 Contact Me
 - Twitter - [@lnfernandobr](https://twitter.com/lnfernandobr)
-- LinkedIn - [Fernando Lima](https://in.linkedin.com/in/)
+- LinkedIn - [Fernando Lima](https://www.linkedin.com/in/fernando-lima-008aa4124/)
 - Blog - [fernandobr](https://fernandobr.com)
 
