@@ -1,5 +1,15 @@
 ### Hi there 👋
 
+
+## 🧐 About
+Hi, my name is Fernando and currently living in Dourados, Brazil. At the moment I am in the 4 year of computer science and working remotely as a full stack developer. I love javascript and I am always looking to improve.
+
+## 📫 Contact Me
+- Twitter - [@lnfernandobr](https://twitter.com/lnfernandobr)
+- LinkedIn - [Fernando Lima](https://in.linkedin.com/in/)
+- Blog - [fernandobr](https://fernandobr.com)
+
+
 <!--
 **lnfernandobr/lnfernandobr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
