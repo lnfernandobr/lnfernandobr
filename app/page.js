@@ -30,7 +30,7 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Fernando Lima | Full Stack Software developer
+            Fernando Lima | Full Stack Software Developer
           </h1>
         </div>
         <div className="mt-16 flex flex-col justify-center items-center w-full">
