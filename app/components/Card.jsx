@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import clsx from 'clsx'
+import Link from "next/link";
 
 function ChevronRightIcon(props) {
   return (
@@ -11,17 +10,20 @@ function ChevronRightIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
-export function Card({ as: Component = 'div', className, children }) {
+export function Card({ as: Component = "div", className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={classNames(
+        className,
+        "group relative flex flex-col items-start"
+      )}
     >
       {children}
     </Component>
-  )
+  );
 }
 
 Card.Link = function CardLink({ children, ...props }) {
@@ -33,24 +35,24 @@ Card.Link = function CardLink({ children, ...props }) {
         <span className="relative z-10">{children}</span>
       </Link>
     </>
-  )
-}
+  );
+};
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
+Card.Title = function CardTitle({ as: Component = "h2", href, children }) {
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
-  )
-}
+  );
+};
 
 Card.Description = function CardDescription({ children }) {
   return (
     <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </p>
-  )
-}
+  );
+};
 
 Card.Cta = function CardCta({ children }) {
   return (
@@ -61,11 +63,11 @@ Card.Cta = function CardCta({ children }) {
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
     </div>
-  )
-}
+  );
+};
 
 Card.Eyebrow = function CardEyebrow({
-  as: Component = 'p',
+  as: Component = "p",
   decorate = false,
   className,
   children,
@@ -73,10 +75,10 @@ Card.Eyebrow = function CardEyebrow({
 }) {
   return (
     <Component
-      className={clsx(
+      className={classNames(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
-        decorate && 'pl-3.5'
+        "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
+        decorate && "pl-3.5"
       )}
       {...props}
     >
@@ -90,5 +92,5 @@ Card.Eyebrow = function CardEyebrow({
       )}
       {children}
     </Component>
-  )
-}
+  );
+};
