@@ -29,7 +29,7 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="text-2xl font-bold tracking-tight text-zinc-600 dark:text-zinc-100 sm:text-2xl">
             Fernando Lima | Full Stack Software Developer
           </h1>
         </div>
@@ -42,7 +42,7 @@ export default function Home({ articles }) {
             className="inline-block h-20 w-20 rounded-full"
           />
           {/* eslint-disable */}
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 text-center">
             Hi there! I'm Fernando Lima, and I live in a small town in Brazil. I
             work as a full stack developer on a daily basis, with experience in
             React, Tailwind CSS, Node.js, GraphQL, and more. In my spare time,
