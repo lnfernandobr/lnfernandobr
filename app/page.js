@@ -47,7 +47,7 @@ export default function Home({ articles }) {
             work as a full stack developer on a daily basis, with experience in
             React, Tailwind CSS, Node.js, GraphQL, and more. In my spare time,
             I'm either working on my microsaas project or being an instructor at
-            codeftw.dev. Every day becoming better!
+            codeftw.dev. Becoming better every day!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
