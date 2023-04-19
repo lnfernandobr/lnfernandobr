@@ -42,9 +42,11 @@ export default function Home({ articles }) {
             className="inline-block h-20 w-20 rounded-full"
           />
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             Hi there! I'm Fernando Lima, and I live in a small town in Brazil. I
             work as a full stack developer on a daily basis, with experience in
             React, Tailwind CSS, Node.js, GraphQL, and more. In my spare time,
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             I'm either working on my microsaas project or being an instructor at
             codeftw.dev. Every day becoming better!
           </p>

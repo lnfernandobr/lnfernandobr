@@ -13,7 +13,7 @@ Hi there! I live in a small town in Brazil. I work as a full stack developer on 
 
 ## 🕺 Interests
 
-- Entrepreneur
+- EntrepreneurK
 - Gym
 
 ## 👯 Communities
