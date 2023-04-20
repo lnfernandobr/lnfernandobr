@@ -17,7 +17,7 @@ function SocialLink({ icon: Icon, ...props }) {
   );
 }
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -28,48 +28,68 @@ export default function Home({ articles }) {
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-600 dark:text-zinc-100 sm:text-2xl">
-            Fernando Lima | Full Stack Software Developer
+        <div className="mt-16">
+          <h1 className="text-4xl font-mono tracking-tight sm:text-4xl text-zinc-500">
+            Fernando Lima
           </h1>
-        </div>
-        <div className="mt-16 flex flex-col justify-center items-center w-full">
-          <Image
-            src="/eu.png"
-            alt="fe"
-            width={80}
-            height={80}
-            className="inline-block h-20 w-20 rounded-full"
-          />
-          {/* eslint-disable */}
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 text-center">
-            Hi there! I'm Fernando Lima, and I live in a small town in Brazil. I
-            work as a full stack developer on a daily basis, with experience in
-            React, Tailwind CSS, Node.js, GraphQL, and more. In my spare time,
-            I'm either working on my microsaas project or being an instructor at
-            codeftw.dev. Becoming better every day!
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/lnfernandobr"
-              aria-label="Follow me on Twitter"
-              icon={TwitterIcon}
+
+          <div className="mt-4 flex flex-col items-center  justify-center w-full gap-8 sm:items-start sm:flex-row">
+            <div className="w-full flex justify-center mb-4 sm:hidden">
+              <Image
+                src="/eu.png"
+                alt="fe"
+                width={80}
+                height={80}
+                className="inline-block h-20 w-20 rounded-full"
+              />
+            </div>
+            <Image
+              src="/eu.png"
+              alt="fe"
+              width={80}
+              height={80}
+              className="h-20 w-20 rounded-full hidden sm:block"
             />
-            <SocialLink
-              href="https://instagram.com/lnfernandobr"
-              aria-label="Follow me on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com/lnfernandobr"
-              aria-label="Follow me on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/lnfernandobr/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
+            {/* eslint-disable */}
+            <div>
+              <p className="text-base text-zinc-600 dark:text-zinc-400 ">
+                Hi there <span>👋</span> I'm Fernando, and I'm a Full Stack
+                Software Engineer. I have experience and work on a daily basis
+                with the following technologies: React, Tailwind CSS, Node.js,
+                GraphQL, and more. In my spare time, I'm either working on my
+                micro-SaaS project or being an instructor at{" "}
+                <Link
+                  href="https://codeftw.dev"
+                  target="_blank"
+                  className="underline text-gray-500"
+                >
+                  CodeFTW
+                </Link>
+                . Becoming better every day!
+              </p>
+              <div className="mt-6 flex gap-6">
+                <SocialLink
+                  href="https://twitter.com/lnfernandobr"
+                  aria-label="Follow me on Twitter"
+                  icon={TwitterIcon}
+                />
+                <SocialLink
+                  href="https://instagram.com/lnfernandobr"
+                  aria-label="Follow me on Instagram"
+                  icon={InstagramIcon}
+                />
+                <SocialLink
+                  href="https://github.com/lnfernandobr"
+                  aria-label="Follow me on GitHub"
+                  icon={GitHubIcon}
+                />
+                <SocialLink
+                  href="https://www.linkedin.com/in/lnfernandobr/"
+                  aria-label="Follow on LinkedIn"
+                  icon={LinkedInIcon}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </Container>
