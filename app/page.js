@@ -29,7 +29,7 @@ export default function Home() {
       </Head>
       <Container className="mt-9">
         <div className="mt-16">
-          <h1 className="text-4xl font-mono tracking-tight sm:text-4xl text-zinc-500">
+          <h1 className="text-4xl tracking-tight sm:text-4xl text-zinc-500">
             Fernando Lima
           </h1>
 
