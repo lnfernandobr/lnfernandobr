@@ -74,11 +74,6 @@ export default function Home() {
                   icon={TwitterIcon}
                 />
                 <SocialLink
-                  href="https://instagram.com/lnfernandobr"
-                  aria-label="Follow me on Instagram"
-                  icon={InstagramIcon}
-                />
-                <SocialLink
                   href="https://github.com/lnfernandobr"
                   aria-label="Follow me on GitHub"
                   icon={GitHubIcon}
