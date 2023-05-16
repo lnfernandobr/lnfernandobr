@@ -11,11 +11,6 @@ Hi there! I live in a small town in Brazil. I work as a full stack developer on 
 - **Hobbies :** Books :books: | Music :headphones: | Games :joystick: | Tabletop RPG 🎲
 - **Ask me about :** Anything!, I will try to help :v:
 
-## 🕺 Interests
-
-- EntrepreneurK
-- Gym
-
 ## 👯 Communities
 
 - Code For The Win - [CodeFTW](https://www.codeftw.dev/)
@@ -24,4 +19,4 @@ Hi there! I live in a small town in Brazil. I work as a full stack developer on 
 
 - Twitter - [@lnfernandobr](https://twitter.com/lnfernandobr)
 - LinkedIn - [Fernando Lima](https://www.linkedin.com/in/lnfernandobr/)
-- Medium - [@lnfernandobr](https://medium.com/@lnfernandobr)
+- Personal Site - [Personal Site](https://fernandolima.vercel.app/)
