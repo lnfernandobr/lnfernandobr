@@ -1,27 +1,26 @@
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { ThemeToggle } from "./components/ThemeToggle";
+import { LanguageProvider } from "./components/LanguageProvider";
+import { LanguageToggle } from "./components/LanguageToggle";
 
 export const metadata = {
-  title: "Fernando Lima - Personal developer site",
+  title: "Fernando Lima",
   description:
-    "I'm Fernando Lima, and I live in a small town in Brazil. I work as a full stack developer on a daily basis, with experience in React, Tailwind CSS, Node.js, GraphQL, and more. In my spare time, I'm either working on my microsaas project or being an instructor at codeftw.dev. Every day becoming better! ",
+    "I'm Fernando Lima, a Full Stack Software Engineer with experience in React, Tailwind CSS, Node.js, GraphQL, and more. Currently working on micro-SaaS projects and teaching at codeftw.dev.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <div
-          className="flex h-full flex-col bg-zinc-50"
-          style={{ height: "100vh" }}
-        >
-          <div className="fixed inset-0 flex justify-center sm:px-8">
-            <div className="flex w-full max-w-4xl lg:px-8">
-              <div className="w-full bg-white ring-1 ring-zinc-100">
-                {children}
-              </div>
-            </div>
-          </div>
-        </div>
+    <html lang="en" className="h-full dark" style={{ colorScheme: 'dark' }}>
+      <body className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 transition-colors duration-200">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <LanguageProvider>
+            <ThemeToggle />
+            <LanguageToggle />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

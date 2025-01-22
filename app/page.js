@@ -1,93 +1,87 @@
+'use client'
+
 import { Container } from "@/app/components/Container";
+import { Projects } from "@/app/components/Projects";
 import Link from "next/link";
 import Image from "next/image";
-import Head from "next/head";
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from "@/app/components/SocialIcons";
-
-function SocialLink({ icon: Icon, ...props }) {
-  return (
-    <Link className="group -m-1 p-1" target="_blank" rel="noopener" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  );
-}
+import { useState } from "react";
+import { Social } from "@/app/components/Social";
+import { WorkWithMe } from "@/app/components/WorkWithMe";
+import { useLanguage } from "./components/LanguageProvider";
+import { translations } from "./lib/translations";
+import { About } from "@/app/components/About";
+import { SocialIcons } from "@/app/components/SocialIcons";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('about');
+  const { language } = useLanguage();
+  const t = translations[language].nav;
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'about':
+        return <About />;
+      case 'projects':
+        return <Projects />;
+      case 'social':
+        return <Social />;
+      case 'work':
+        return <WorkWithMe />;
+      default:
+        return <About />;
+    }
+  };
+
+  const tabs = [
+    { id: 'about', label: t.about },
+    { id: 'projects', label: t.projects },
+    { id: 'social', label: t.social },
+    { id: 'work', label: t.workWithMe }
+  ];
+
   return (
-    <>
-      <Head>
-        <title>Fernando Lima - Software developer</title>
-        <meta
-          name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
-        />
-      </Head>
-      <Container className="mt-9">
-        <div className="mt-16">
-          <h1 className="text-4xl tracking-tight sm:text-4xl text-zinc-500">
+    <main className="min-h-screen py-16">
+      <Container>
+        <nav>
+          <ul className="flex justify-center gap-8">
+            {tabs.map(tab => (
+              <li key={tab.id}>
+                <button 
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`text-[14px] ${
+                    activeTab === tab.id 
+                      ? 'text-zinc-900 dark:text-zinc-100' 
+                      : 'text-zinc-500 dark:text-zinc-400'
+                  } hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors duration-200`}
+                >
+                  {tab.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        
+        <div className="mt-24 max-w-[640px] mx-auto text-center">
+          <h1 className="text-[28px] font-normal text-zinc-900 dark:text-zinc-100 mb-8">
             Fernando Lima
           </h1>
 
-          <div className="mt-4 flex flex-col items-center  justify-center w-full gap-8 sm:items-start sm:flex-row">
-            <div className="w-full flex justify-center mb-4 sm:hidden">
-              <Image
-                src="/eu.png"
-                alt="fe"
-                width={80}
-                height={80}
-                className="inline-block h-20 w-20 rounded-full"
-              />
-            </div>
+          <div className="flex flex-col items-center space-y-8">
             <Image
               src="/eu.png"
-              alt="fe"
-              width={80}
-              height={80}
-              className="h-20 w-20 rounded-full hidden sm:block"
+              alt="Fernando Lima"
+              width={112}
+              height={112}
+              className="rounded-full ring-2 ring-zinc-100 dark:ring-zinc-800"
+              priority
             />
-            {/* eslint-disable */}
-            <div>
-              <p className="text-base text-zinc-600 dark:text-zinc-400 ">
-                Hi there <span>👋</span> I'm Fernando, and I'm a Full Stack
-                Software Engineer. I have experience and work on a daily basis
-                with the following technologies: React, Tailwind CSS, Node.js,
-                GraphQL, and more. In my spare time, I'm either working on my
-                micro-SaaS project or being an instructor at{" "}
-                <Link
-                  href="https://codeftw.dev"
-                  target="_blank"
-                  className="underline text-gray-500"
-                >
-                  CodeFTW
-                </Link>
-                . Becoming better every day!
-              </p>
-              <div className="mt-6 flex gap-6">
-                <SocialLink
-                  href="https://twitter.com/lnfernandobr"
-                  aria-label="Follow me on Twitter"
-                  icon={TwitterIcon}
-                />
-                <SocialLink
-                  href="https://github.com/lnfernandobr"
-                  aria-label="Follow me on GitHub"
-                  icon={GitHubIcon}
-                />
-                <SocialLink
-                  href="https://www.linkedin.com/in/lnfernandobr/"
-                  aria-label="Follow on LinkedIn"
-                  icon={LinkedInIcon}
-                />
-              </div>
-            </div>
+            
+            {renderContent()}
+
+            {activeTab !== 'social' && <SocialIcons />}
           </div>
         </div>
       </Container>
-    </>
+    </main>
   );
 }
