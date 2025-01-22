@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="updated font style">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SocialIcons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/SocialIcons.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-    </list>
+    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +30,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/fernando/Documents/Empresa/Dev/fernandolima/public",
+    "last_opened_file_path": "/home/fernando/Documentos/lnfernandobr/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,7 +93,7 @@
       <workItem from="1681933034467" duration="6030000" />
       <workItem from="1681993223421" duration="3729000" />
       <workItem from="1684249775993" duration="12000" />
-      <workItem from="1737576116699" duration="4631000" />
+      <workItem from="1737576116699" duration="5475000" />
     </task>
     <task id="LOCAL-00001" summary="updated docs">
       <created>1681937086205</created>
@@ -165,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1681994855741</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability.">
+      <option name="closed" value="true" />
+      <created>1737588342680</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737588342680</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +191,7 @@
     <MESSAGE value="updated screen size and some texts" />
     <MESSAGE value="update layout" />
     <MESSAGE value="updated font style" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated font style" />
+    <MESSAGE value="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability." />
   </component>
 </project>
