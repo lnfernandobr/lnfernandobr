@@ -12,7 +12,7 @@ export function Projects() {
     {
       ...t.mapMoments,
       link: 'https://lp.mapmoments.pro/',
-      tech: ['Next.js', 'Node.js', 'AWS', 'AI Integration']
+      tech: ['MeteorJS', 'Node.js', 'Quave Cloud', 'AI Integration']
     },
     {
       ...t.estudeDev,
