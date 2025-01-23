@@ -1,8 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
-import { ThemeToggle } from "./components/ThemeToggle";
 import { LanguageProvider } from "./components/LanguageProvider";
-import { LanguageToggle } from "./components/LanguageToggle";
+import { Header } from "./components/Header";
 
 export const metadata = {
   title: "Fernando Lima",
@@ -16,9 +15,10 @@ export default function RootLayout({ children }) {
       <body className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <LanguageProvider>
-            <ThemeToggle />
-            <LanguageToggle />
-            {children}
+            <Header />
+            <main className="pt-16">
+              {children}
+            </main>
           </LanguageProvider>
         </ThemeProvider>
       </body>

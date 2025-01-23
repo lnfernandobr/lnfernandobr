@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon." />
+    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability.">
+      <change beforePath="$PROJECT_DIR$/app/components/LanguageToggle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LanguageToggle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ThemeToggle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ThemeToggle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +101,7 @@
       <workItem from="1681933034467" duration="6030000" />
       <workItem from="1681993223421" duration="3729000" />
       <workItem from="1684249775993" duration="12000" />
-      <workItem from="1737576116699" duration="6169000" />
+      <workItem from="1737576116699" duration="6472000" />
     </task>
     <task id="LOCAL-00001" summary="updated docs">
       <created>1681937086205</created>
@@ -178,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737589721046</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability.">
+      <option name="closed" value="true" />
+      <created>1737592310961</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737592310961</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +217,7 @@
     <MESSAGE value="updated font style" />
     <MESSAGE value="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability." />
     <MESSAGE value="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon." />
+    <MESSAGE value="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability." />
   </component>
 </project>
