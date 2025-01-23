@@ -1,25 +1,26 @@
+'use client'
+
 import Link from 'next/link';
+import { useLanguage } from './LanguageProvider';
+import { translations } from '@/app/lib/translations';
 
 export function Projects() {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+
   const projects = [
     {
-      name: 'Map Moments',
-      status: 'Current',
-      description: 'A platform that lets you create and share interactive 3D travel globes. Features AI-generated content, photo integration, and travel planning tools - all for free.',
+      ...t.mapMoments,
       link: 'https://lp.mapmoments.pro/',
       tech: ['Next.js', 'Node.js', 'AWS', 'AI Integration']
     },
     {
-      name: 'EstudeDev',
-      status: 'Active',
-      description: 'Educational YouTube channel focused on web development, where I share practical tutorials, coding tips, and insights about modern development technologies.',
+      ...t.estudeDev,
       link: 'https://www.youtube.com/@estudedev',
       tech: ['React', 'Next.js', 'Node.js', 'Teaching']
     },
     {
-      name: 'DIY Smart Home',
-      status: 'Side Project',
-      description: 'A personal project combining my love for DIY and coding. Building custom home automation solutions using open-source technologies.',
+      ...t.diySmartHome,
       tech: ['IoT', 'Arduino', 'Node.js']
     }
   ];
@@ -27,7 +28,7 @@ export function Projects() {
   return (
     <div className="space-y-8 text-center">
       <h2 className="text-[18px] font-medium text-zinc-900 dark:text-zinc-100 mb-6">
-        Projects & Creations 🚀
+        {t.title}
       </h2>
 
       <div className="space-y-6">
@@ -42,7 +43,7 @@ export function Projects() {
               </h3>
               {project.status && (
                 <span className={`text-[12px] px-2 py-1 rounded-full ${
-                  project.status === 'Current'
+                  project.status === t.mapMoments.status
                     ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20'
                     : 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                 }`}>
@@ -70,7 +71,7 @@ export function Projects() {
                 rel="noopener noreferrer"
                 className="text-[14px] text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors duration-200 inline-flex items-center justify-center"
               >
-                Visit project <span className="ml-1">→</span>
+                {t.visitProject} <span className="ml-1">→</span>
               </Link>
             )}
           </div>

@@ -34,6 +34,25 @@ export const translations = {
       github: 'Check out my open source contributions and personal projects.',
       instagram: 'Follow my personal journey and behind-the-scenes of my projects.',
       linkedin: 'Connect with me professionally and see my career journey.'
+    },
+    projects: {
+      title: 'Projects & Creations 🚀',
+      mapMoments: {
+        name: 'Map Moments',
+        status: 'Current',
+        description: 'A platform that lets you create and share interactive 3D travel globes. Features AI-generated content, photo integration, and travel planning tools - all for free.'
+      },
+      estudeDev: {
+        name: 'EstudeDev',
+        status: 'Active',
+        description: 'Educational YouTube channel focused on web development, where I share practical tutorials, coding tips, and insights about modern development technologies.'
+      },
+      diySmartHome: {
+        name: 'DIY Smart Home',
+        status: 'Side Project',
+        description: 'A personal project combining my love for DIY and coding. Building custom home automation solutions using open-source technologies.'
+      },
+      visitProject: 'Visit project'
     }
   },
   'pt-BR': {
@@ -71,6 +90,25 @@ export const translations = {
       github: 'Confira minhas contribuições open source e projetos pessoais.',
       instagram: 'Siga minha jornada pessoal e os bastidores dos meus projetos.',
       linkedin: 'Conecte-se comigo profissionalmente e veja minha jornada na carreira.'
+    },
+    projects: {
+      title: 'Projetos & Criações 🚀',
+      mapMoments: {
+        name: 'Map Moments',
+        status: 'Atual',
+        description: 'Uma plataforma que permite criar e compartilhar globos de viagem 3D interativos. Possui conteúdo gerado por IA, integração de fotos e ferramentas de planejamento de viagem - tudo gratuitamente.'
+      },
+      estudeDev: {
+        name: 'EstudeDev',
+        status: 'Ativo',
+        description: 'Canal do YouTube educacional focado em desenvolvimento web, onde compartilho tutoriais práticos, dicas de programação e insights sobre tecnologias modernas de desenvolvimento.'
+      },
+      diySmartHome: {
+        name: 'DIY Smart Home',
+        status: 'Projeto Pessoal',
+        description: 'Um projeto pessoal combinando meu amor por DIY e programação. Construindo soluções personalizadas de automação residencial usando tecnologias open-source.'
+      },
+      visitProject: 'Visitar projeto'
     }
   }
 }; 
