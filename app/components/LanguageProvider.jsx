@@ -3,23 +3,23 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const LanguageContext = createContext({
-  language: 'en',
+  language: 'pt-BR',
   toggleLanguage: () => {},
 });
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('pt-BR');
 
   useEffect(() => {
     // Get browser language
     const browserLang = navigator.language || navigator.userLanguage;
-    // Set PT if browser language starts with 'pt', otherwise EN
-    const initialLang = browserLang.startsWith('pt') ? 'pt-BR' : 'en';
+    // Set EN if browser language starts with 'en', otherwise PT-BR
+    const initialLang = browserLang.startsWith('en') ? 'en' : 'pt-BR';
     setLanguage(initialLang);
   }, []);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'pt-BR' : 'en');
+    setLanguage(prev => prev === 'pt-BR' ? 'en' : 'pt-BR');
   };
 
   return (

@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability.">
-      <change beforePath="$PROJECT_DIR$/app/components/LanguageToggle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LanguageToggle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ThemeToggle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ThemeToggle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/LanguageProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LanguageProvider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Projects.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Projects.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/SocialIcons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/SocialIcons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/WorkWithMe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/WorkWithMe.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/translations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,34 +24,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lnfernandobr"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:lnfernandobr/lnfernandobr.git",
+    "accountId": "13f3cf0e-031c-4340-97be-604839de08db"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2Oetm37ASiXwnutuFeU8ZdZcuLq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/fernando/Documentos/lnfernandobr/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/fernando/Documents/Empresa/Dev/fernandolima/node_modules/prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fernando/Documentos/lnfernandobr/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/fernando/Documents/Empresa/Dev/fernandolima/node_modules/prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -102,6 +121,7 @@
       <workItem from="1681993223421" duration="3729000" />
       <workItem from="1684249775993" duration="12000" />
       <workItem from="1737576116699" duration="6472000" />
+      <workItem from="1755213183345" duration="1905000" />
     </task>
     <task id="LOCAL-00001" summary="updated docs">
       <created>1681937086205</created>
