@@ -4,36 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="Updating lp">
+    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="cleaning project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/hello/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Button.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Card.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Container.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/LanguageProvider.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/LanguageToggle.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Navigation.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Projects.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Social.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SocialIcons.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SocialIconsSVG.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ThemeProvider.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ThemeToggle.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/WorkWithMe.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/classNames.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/formatDate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/translations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/eu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +122,7 @@
       <workItem from="1684249775993" duration="12000" />
       <workItem from="1737576116699" duration="6472000" />
       <workItem from="1755213183345" duration="1938000" />
-      <workItem from="1763556501743" duration="574000" />
+      <workItem from="1763556501743" duration="864000" />
     </task>
     <task id="LOCAL-00001" summary="updated docs">
       <created>1681937086205</created>
@@ -245,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755216196707</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="cleaning project">
+      <option name="closed" value="true" />
+      <created>1763557086165</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763557086165</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +256,7 @@
     <MESSAGE value="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon." />
     <MESSAGE value="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability." />
     <MESSAGE value="Updating lp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating lp" />
+    <MESSAGE value="cleaning project" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning project" />
   </component>
 </project>
