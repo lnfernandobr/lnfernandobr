@@ -4,259 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="cleaning project">
+    <list default="true" id="e8d734cc-1733-499f-a759-289452e717d9" name="Changes" comment="updating packages">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lnfernandobr.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/fernando/Documentos/dev/lnfernandobr" value="2Oetm37ASiXwnutuFeU8ZdZcuLq" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="15" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;lnfernandobr&quot;
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:lnfernandobr/lnfernandobr.git&quot;,
-    &quot;accountId&quot;: &quot;13f3cf0e-031c-4340-97be-604839de08db&quot;
-  }
-}</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2Oetm37ASiXwnutuFeU8ZdZcuLq" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fernando/Documentos/lnfernandobr/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/home/fernando/.nvm/versions/node/v22.13.1/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/fernando/Documentos/Dev/lnfernandobr/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/lib" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
-      <method v="2" />
-    </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v20.13.0/bin/node" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.build" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a558f1d4-59b3-4c30-b3a2-5c4de0f49cbb" name="Changes" comment="" />
-      <created>1681933032726</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1681933032726</updated>
-      <workItem from="1681933034467" duration="6030000" />
-      <workItem from="1681993223421" duration="3729000" />
-      <workItem from="1684249775993" duration="12000" />
-      <workItem from="1737576116699" duration="6472000" />
-      <workItem from="1755213183345" duration="1938000" />
-      <workItem from="1763556501743" duration="864000" />
-    </task>
-    <task id="LOCAL-00001" summary="updated docs">
-      <created>1681937086205</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1681937086205</updated>
-    </task>
-    <task id="LOCAL-00002" summary="updated docs">
-      <created>1681937137221</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1681937137221</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added eslint suppressor">
-      <created>1681937428629</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1681937428629</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added eslint suppressor">
-      <created>1681937675848</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1681937675848</updated>
-    </task>
-    <task id="LOCAL-00005" summary="update title">
-      <created>1681938040698</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1681938040698</updated>
-    </task>
-    <task id="LOCAL-00006" summary="updated description txt">
-      <created>1681938133383</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681938133383</updated>
-    </task>
-    <task id="LOCAL-00007" summary="updated screen size and some texts">
-      <created>1681938602700</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1681938602700</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update layout">
-      <created>1681994752954</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1681994752954</updated>
-    </task>
-    <task id="LOCAL-00009" summary="updated font style">
-      <created>1681994855741</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1681994855741</updated>
-    </task>
-    <task id="LOCAL-00010" summary="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability.">
-      <option name="closed" value="true" />
-      <created>1737588342680</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1737588342680</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon.">
-      <option name="closed" value="true" />
-      <created>1737589721046</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1737589721046</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability.">
-      <option name="closed" value="true" />
-      <created>1737592310961</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1737592310961</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Updating lp">
-      <option name="closed" value="true" />
-      <created>1755216196707</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1755216196707</updated>
-    </task>
-    <task id="LOCAL-00014" summary="cleaning project">
-      <option name="closed" value="true" />
-      <created>1763557086165</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1763557086165</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated docs" />
-    <MESSAGE value="added eslint suppressor" />
-    <MESSAGE value="update title" />
-    <MESSAGE value="updated description txt" />
-    <MESSAGE value="updated screen size and some texts" />
-    <MESSAGE value="update layout" />
-    <MESSAGE value="updated font style" />
-    <MESSAGE value="&#10;Add new components and update project structure&#10;&#10;This commit introduces several new components, including About, Projects, Social, and WorkWithMe, enhancing the functionality of the application. It also implements a theme and language provider for better user experience and accessibility. Additionally, the project structure has been updated to improve organization and maintainability." />
-    <MESSAGE value="Update project structure and components&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also updates the last opened file path and adjusts task durations, enhancing the overall organization and maintainability of the project. Additionally, it removes obsolete SVG files and updates the favicon." />
-    <MESSAGE value="Update project structure and enhance language support&#10;&#10;This commit modifies the workspace configuration to reflect the addition of new components, including About, Projects, Social, and WorkWithMe. It also introduces a language provider that sets the initial language based on the user's browser settings, and updates the Projects component to utilize translations for better localization. Additionally, it removes obsolete SVG files and updates the favicon for improved project organization and maintainability." />
-    <MESSAGE value="Updating lp" />
-    <MESSAGE value="cleaning project" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning project" />
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

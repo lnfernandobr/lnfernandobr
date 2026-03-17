@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fernando Lima — desenvolvedor fullstack e empreendedor. Dourados, MS.">
+  <meta name="theme-color" content="#1a1a17">
+  <title>Fernando Lima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #141412;
+      --text: #e2ded4;
+      --text-heading: #f0ece3;
+      --text-muted: #b0a998;
+      --text-faint: #7d776b;
+      --accent: #d4ad5a;
+      --accent-dim: rgba(212, 173, 90, 0.1);
+      --accent-line: rgba(212, 173, 90, 0.15);
+      --serif: 'Lora', Georgia, 'Times New Roman', serif;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+      --max-width: 640px;
+      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-out: cubic-bezier(0, 0, 0.25, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--mono);
+      font-weight: 400;
+      font-size: 15px;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Paper grain texture — pure CSS */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+       ============================================= */
+    .r {
+      opacity: 0;
+      transform: translateY(16px);
+      transition:
+        opacity 1s var(--ease-out),
+        transform 1s var(--ease-out);
+    }
+
+    .r.v {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .r-d1 { transition-delay: 0.12s; }
+    .r-d2 { transition-delay: 0.24s; }
+    .r-d3 { transition-delay: 0.36s; }
+    .r-d4 { transition-delay: 0.48s; }
+    .r-d5 { transition-delay: 0.6s; }
+
+    /* =============================================
+       OPENING — the entrance
+       ============================================= */
+    .opening {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .opening-rule {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--accent-line));
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: rule-in 1.5s 0.2s var(--ease-out) forwards;
+    }
+
+    @keyframes rule-in {
+      from { opacity: 0; height: 0; }
+      to { opacity: 1; height: 60px; }
+    }
+
+    .epigraph {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+      color: var(--text);
+      max-width: 520px;
+      line-height: 1.9;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: smoke-in 1.8s 0.6s var(--ease-out) forwards;
+    }
+
+    @keyframes smoke-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(2px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    .opening-name {
+      font-family: var(--mono);
+      font-weight: 400;
+      font-size: 0.88rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: smoke-in 1.4s 1.2s var(--ease-out) forwards;
+    }
+
+    .opening-nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      opacity: 0;
+      animation: smoke-in 1.4s 1.6s var(--ease-out) forwards;
+    }
+
+    .opening-nav a {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      transition: color 0.4s var(--ease);
+      position: relative;
+    }
+
+    .opening-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s var(--ease);
+    }
+
+    .opening-nav a:hover {
+      color: var(--accent);
+    }
+
+    .opening-nav a:hover::after {
+      width: 100%;
+    }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: hint-in 1s 2.4s var(--ease-out) forwards;
+    }
+
+    .scroll-hint span {
+      display: block;
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(to bottom, var(--text-faint), transparent);
+      animation: scroll-pulse 2s infinite var(--ease);
+    }
+
+    @keyframes hint-in {
+      to { opacity: 1; }
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 0.15; transform: translateY(6px); }
+    }
+
+    /* =============================================
+       SECTION SHARED
+       ============================================= */
+    .section {
+      padding: 120px 24px 140px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-rule {
+      width: 32px;
+      height: 1px;
+      background: var(--accent-line);
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 48px;
+    }
+
+    /* =============================================
+       QUEM SOU — narrative
+       ============================================= */
+    .narrative p {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      line-height: 2;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+
+    .narrative p:last-child {
+      margin-bottom: 0;
+    }
+
+    .narrative em {
+      font-style: italic;
+      color: var(--text-heading);
+    }
+
+    .narrative .hl {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* =============================================
+       O QUE CONSTRUO — bibliography style
+       ============================================= */
+    .works {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+
+    .work-item {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(200, 164, 92, 0.08);
+    }
+
+    .work-item:first-child {
+      border-top: 1px solid rgba(200, 164, 92, 0.08);
+    }
+
+    .work-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .work-link {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      transition: color 0.3s var(--ease);
+    }
+
+    .work-link:hover {
+      color: var(--accent);
+    }
+
+    .work-link:hover .work-arrow {
+      transform: translate(2px, -2px);
+      opacity: 1;
+    }
+
+    .work-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--text-heading);
+    }
+
+    .work-arrow {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      opacity: 0.5;
+      transition: all 0.3s var(--ease);
+    }
+
+    .work-desc {
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .work-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .work-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .work-tag::before {
+      content: '#';
+      color: var(--accent);
+      opacity: 0.5;
+      margin-right: 1px;
+    }
+
+    .works-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--text-faint);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       O CAMINHO — the path
+       ============================================= */
+    .caminho-text {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 2vw, 1.15rem);
+      line-height: 2;
+      color: var(--text);
+      max-width: 580px;
+      margin-bottom: 36px;
+    }
+
+    .caminho-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 8px 16px;
+      border: 1px solid var(--accent-line);
+      border-radius: 2px;
+    }
+
+    .caminho-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse-dot 2.5s infinite var(--ease);
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* =============================================
+       CONTATO
+       ============================================= */
+    .contato-cta {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .contato-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contato-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: color 0.3s var(--ease);
+      width: fit-content;
+    }
+
+    .contato-link:hover {
+      color: var(--accent);
+    }
+
+    .contato-link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      opacity: 0.7;
+      transition: opacity 0.3s var(--ease);
+    }
+
+    .contato-link:hover svg {
+      opacity: 1;
+    }
+
+    /* =============================================
+       DIVIDER — between sections
+       ============================================= */
+    .divider {
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .divider-inner {
+      max-width: var(--max-width);
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--accent-line) 30%,
+        var(--accent-line) 70%,
+        transparent
+      );
+    }
+
+    /* =============================================
+       FOOTER
+       ============================================= */
+    .footer {
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+
+    .footer-location {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      opacity: 0.6;
+    }
+
+    /* =============================================
+       FOCUS & A11Y
+       ============================================= */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html { scroll-behavior: auto; }
+
+      .r {
+        opacity: 1;
+        transform: none;
+      }
+
+      .opening-rule,
+      .epigraph,
+      .opening-name,
+      .opening-nav,
+      .scroll-hint {
+        opacity: 1;
+      }
+    }
+
+    /* =============================================
+       RESPONSIVE
+       ============================================= */
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 72px 24px 88px;
+      }
+
+      .opening {
+        padding: 40px 24px;
+      }
+
+      .opening-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 28px;
+      }
+
+      .opening-nav a {
+        font-size: 0.82rem;
+        padding: 4px 0;
+      }
+
+      .narrative p {
+        font-size: 1.05rem;
+        line-height: 1.9;
+      }
+
+      .section-label {
+        font-size: 0.72rem;
+        margin-bottom: 36px;
+      }
+
+      .work-header {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .work-desc {
+        font-size: 0.86rem;
+      }
+
+      .contato-links {
+        gap: 20px;
+      }
+
+      .contato-link {
+        font-size: 0.86rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== OPENING ====== -->
+  <section class="opening" id="inicio" aria-label="Abertura">
+    <div class="opening-rule" aria-hidden="true"></div>
+
+    <p class="epigraph">
+      Desenvolvedor, empreendedor, e outras coisas que ainda estou descobrindo.
+    </p>
+
+    <p class="opening-name">Fernando Lima</p>
+
+    <nav class="opening-nav" role="navigation" aria-label="Navegacao principal">
+      <a href="#quem-sou">quem sou</a>
+      <a href="#o-que-construo">projetos</a>
+      <a href="#o-caminho">o caminho</a>
+      <a href="#contato">contato</a>
+    </nav>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ====== QUEM SOU ====== -->
+  <div class="divider" aria-hidden="true"><div class="divider-inner"></div></div>
+
+  <section class="section" id="quem-sou" aria-label="Quem sou">
+    <div class="section-inner">
+      <div class="section-rule r" aria-hidden="true"></div>
+      <p class="section-label r r-d1">Quem sou</p>
+
+      <div class="narrative">
+        <p class="r r-d2">
+          Desenvolvedor fullstack. Trabalho remoto do <em>MS</em>.
+        </p>
+        <p class="r r-d3">
+          Fundei a <span class="hl">Flavum Labs</span> com um amigo. A gente constrói produto próprio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== O QUE CONSTRUO ====== -->
+  <div class="divider" aria-hidden="true"><div class="divider-inner"></div></div>
+
+  <section class="section" id="o-que-construo" aria-label="Projetos">
+    <div class="section-inner">
+      <div class="section-rule r" aria-hidden="true"></div>
+      <p class="section-label r r-d1">O que construo</p>
+
+      <ol class="works" role="list">
+        <li class="work-item r r-d2">
+          <div class="work-header">
+            <a href="https://flavumlabs.com" target="_blank" rel="noopener noreferrer" class="work-link">
+              <span class="work-name">Flavum Labs</span>
+              <span class="work-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+          </div>
+          <p class="work-desc">Estúdio de produtos digitais &mdash; do conceito ao lançamento.</p>
+          <div class="work-tags">
+            <span class="work-tag">Hub de Produtos</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ====== O CAMINHO ====== -->
+  <div class="divider" aria-hidden="true"><div class="divider-inner"></div></div>
+
+  <section class="section" id="o-caminho" aria-label="O Caminho">
+    <div class="section-inner">
+      <div class="section-rule r" aria-hidden="true"></div>
+      <p class="section-label r r-d1">O caminho</p>
+
+      <p class="caminho-text r r-d2">
+        Em breve.
+      </p>
+
+      <div class="r r-d3">
+        <span class="caminho-badge">
+          <span class="dot" aria-hidden="true"></span>
+          em construção
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTATO ====== -->
+  <div class="divider" aria-hidden="true"><div class="divider-inner"></div></div>
+
+  <section class="section" id="contato" aria-label="Contato">
+    <div class="section-inner">
+      <div class="section-rule r" aria-hidden="true"></div>
+      <p class="section-label r r-d1">Contato</p>
+
+      <div class="contato-links r r-d2">
+        <a href="https://github.com/lnfernandobr" target="_blank" rel="noopener noreferrer" class="contato-link" aria-label="Perfil no GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          github.com/lnfernandobr
+        </a>
+        <a href="https://linkedin.com/in/lnfernandobr" target="_blank" rel="noopener noreferrer" class="contato-link" aria-label="Perfil no LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          linkedin.com/in/lnfernandobr
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer-location">Fernando Lima &middot; MS &middot; 2026</p>
+  </footer>
+
+  <script>
+    // Intersection Observer — elements emerge like fog clearing
+    const observed = document.querySelectorAll('.r');
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('v');
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    );
+
+    for (const el of observed) io.observe(el);
+
+    // Smooth scroll — fallback for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
