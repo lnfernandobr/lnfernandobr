@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
+import { Geist, Geist_Mono, Instrument_Serif, Press_Start_2P } from 'next/font/google';
 import './globals.css';
 
 const geist = Geist({
@@ -23,6 +23,13 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
 });
 
+const pressStart = Press_Start_2P({
+  subsets: ['latin'],
+  variable: '--pixel',
+  weight: ['400'],
+  display: 'swap',
+});
+
 const SITE_URL = 'https://fernandolima.pro';
 
 export const metadata = {
@@ -32,31 +39,21 @@ export const metadata = {
     template: '%s | Fernando Lima',
   },
   description:
-    'Fernando Lima é desenvolvedor fullstack com 9+ anos de experiência em Node.js, React, TypeScript e IA. Cofundador da Flavum Labs. Construindo produtos digitais de ponta a ponta.',
+    'Site pessoal do Fernando Lima. Log do que tenho construído e pensado.',
   applicationName: 'Fernando Lima',
   authors: [{ name: 'Fernando Lima', url: SITE_URL }],
   creator: 'Fernando Lima',
   publisher: 'Fernando Lima',
   keywords: [
     'Fernando Lima',
-    'fullstack developer',
-    'desenvolvedor fullstack',
-    'Node.js',
-    'React',
-    'TypeScript',
-    'Next.js',
-    'JavaScript',
-    'desenvolvedor remoto',
-    'freelancer',
-    'SaaS',
-    'marketplace',
-    'IA',
-    'Flavum Labs',
-    'Desconta.ai',
+    'site pessoal',
+    'log',
+    'build in public',
+    'indie',
     'Mato Grosso do Sul',
     'Brasil',
   ],
-  category: 'technology',
+  category: 'personal',
   alternates: {
     canonical: '/',
     languages: {
@@ -71,15 +68,13 @@ export const metadata = {
     alternateLocale: ['en_US'],
     url: SITE_URL,
     siteName: 'Fernando Lima',
-    title: 'Fernando Lima — Fullstack Developer',
-    description:
-      'Desenvolvedor fullstack há 9+ anos. Node, React, TypeScript e IA. Cofundador da Flavum Labs. Produtos digitais de ponta a ponta.',
+    title: 'Fernando Lima',
+    description: 'Site pessoal. Log do que tenho construído e pensado.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fernando Lima — Fullstack Developer',
-    description:
-      'Desenvolvedor fullstack há 9+ anos. Node, React, TypeScript e IA. Cofundador da Flavum Labs.',
+    title: 'Fernando Lima',
+    description: 'Site pessoal. Log do que tenho construído e pensado.',
     creator: '@lnfernandobr',
   },
   robots: {
@@ -101,10 +96,18 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#ffffff',
+  themeColor: '#15120b',
   width: 'device-width',
   initialScale: 1,
 };
+
+const themeInitScript = `
+try {
+  var t = localStorage.getItem('theme');
+  var dark = t !== 'light';
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+} catch (e) {}
+`;
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -112,33 +115,13 @@ const personJsonLd = {
   name: 'Fernando Lima',
   alternateName: 'lnfernandobr',
   url: SITE_URL,
-  jobTitle: 'Fullstack Developer',
-  description:
-    'Desenvolvedor fullstack com 9+ anos de experiência em Node.js, React, TypeScript e IA. Cofundador da Flavum Labs.',
-  knowsAbout: [
-    'Node.js',
-    'React',
-    'TypeScript',
-    'Next.js',
-    'JavaScript',
-    'Fullstack Development',
-    'SaaS',
-    'Artificial Intelligence',
-  ],
+  description: 'Site pessoal do Fernando Lima.',
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'MS',
     addressCountry: 'BR',
   },
-  sameAs: [
-    'https://github.com/lnfernandobr',
-    'https://flavumlabs.com',
-  ],
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Flavum Labs',
-    url: 'https://flavumlabs.com',
-  },
+  sameAs: ['https://github.com/lnfernandobr'],
 };
 
 const websiteJsonLd = {
@@ -157,9 +140,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="pt-BR"
-      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${pressStart.variable}`}
     >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {children}
         <script
           type="application/ld+json"

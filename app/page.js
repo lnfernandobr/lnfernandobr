@@ -18,7 +18,7 @@ const COPY = {
     toggle: 'EN',
     header: {
       name: 'Fernando Lima',
-      role: 'MS, Brasil',
+      role: 'Mato Grosso do Sul, Brasil',
     },
     sections: {
       log: { n: '01', label: 'Log' },
@@ -59,7 +59,7 @@ const COPY = {
     toggle: 'PT',
     header: {
       name: 'Fernando Lima',
-      role: 'MS, Brazil',
+      role: 'Mato Grosso do Sul, Brazil',
     },
     sections: {
       log: { n: '01', label: 'Log' },
@@ -148,12 +148,35 @@ export default function Home() {
     <main className="shell">
       <header className="head">
         <div className="head-l">
-          <h1 className="head-name">{t.header.name}</h1>
+          <h1 className="head-name" aria-label={t.header.name}>
+            {t.header.name.split('').map((ch, i) => (
+              <span
+                key={i}
+                className="name-char"
+                style={{ animationDelay: `${i * 0.08}s` }}
+                aria-hidden="true"
+              >
+                {ch === ' ' ? '\u00A0' : ch}
+              </span>
+            ))}
+          </h1>
           <p className="head-role">{t.header.role}</p>
         </div>
-        <button className="lang" onClick={toggle} aria-label="toggle language">
-          {t.toggle}
-        </button>
+        <div className="head-r">
+          <button
+            className="theme"
+            onClick={() => {
+              const cur = document.documentElement.getAttribute('data-theme');
+              const next = cur === 'dark' ? 'light' : 'dark';
+              document.documentElement.setAttribute('data-theme', next);
+              try { localStorage.setItem('theme', next); } catch (e) {}
+            }}
+            aria-label="toggle theme"
+          />
+          <button className="lang" onClick={toggle} aria-label="toggle language">
+            {t.toggle}
+          </button>
+        </div>
       </header>
 
       <section className="sec">
@@ -168,7 +191,7 @@ export default function Home() {
                 {group.items.map((e) => (
                   <article className="log-entry" key={e.d + e.title[lang]}>
                     <div className="log-meta">
-                      <time className="log-date" dateTime={e.d}>{e.d.slice(0, 10)}</time>
+                      <time className="log-date" dateTime={e.d}>{e.d.slice(0, 10).replace(/-/g, '/')}</time>
                       {e.d.includes('T') && (
                         <>
                           <span className="log-sep" aria-hidden>·</span>
