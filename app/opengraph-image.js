@@ -36,13 +36,27 @@ export default async function Image() {
           style={{
             display: 'flex',
             fontFamily: 'PressStart2P',
-            fontSize: 76,
+            fontSize: 72,
             color: ink,
             lineHeight: 1,
             letterSpacing: 0,
           }}
         >
-          Fernando Lima
+          Fernando
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            fontFamily: 'PressStart2P',
+            fontSize: 72,
+            color: ink,
+            lineHeight: 1,
+            letterSpacing: 0,
+            marginTop: 24,
+          }}
+        >
+          Lima
         </div>
 
         <div
@@ -52,7 +66,7 @@ export default async function Image() {
             height: 14,
             background: accent,
             marginTop: 44,
-            marginBottom: 44,
+            marginBottom: 32,
           }}
         />
 
@@ -60,7 +74,7 @@ export default async function Image() {
           style={{
             display: 'flex',
             fontFamily: 'PressStart2P',
-            fontSize: 22,
+            fontSize: 20,
             color: muted,
             lineHeight: 1,
             letterSpacing: 0,

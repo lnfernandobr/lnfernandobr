@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8d734cc-1733-499f-a759-289452e717d9" name="Changes" comment="new LP" />
+    <list default="true" id="e8d734cc-1733-499f-a759-289452e717d9" name="Changes" comment="new LP">
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/opengraph-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/opengraph-image.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,9 +115,17 @@
       <updated>1773770023268</updated>
       <workItem from="1773770024459" duration="1763000" />
       <workItem from="1776339342177" duration="5877000" />
-      <workItem from="1776358327450" duration="13788000" />
+      <workItem from="1776358327450" duration="14110000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new LP">
+      <option name="closed" value="true" />
+      <created>1776374790599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776374790599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
