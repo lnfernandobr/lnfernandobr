@@ -61,6 +61,7 @@ body {
   color: var(--ink);
   background: var(--bg);
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 ::selection { background: var(--accent); color: var(--bg); }
@@ -81,6 +82,7 @@ button {
   margin: 0 auto;
   padding: 40px 32px 80px;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }

@@ -96,7 +96,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#15120b',
+  themeColor: '#faf7ef',
   width: 'device-width',
   initialScale: 1,
 };
@@ -104,7 +104,7 @@ export const viewport = {
 const themeInitScript = `
 try {
   var t = localStorage.getItem('theme');
-  var dark = t !== 'light';
+  var dark = t === 'dark';
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
 } catch (e) {}
 `;
