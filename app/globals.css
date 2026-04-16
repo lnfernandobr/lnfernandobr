@@ -16,6 +16,10 @@
   --line-2: #efe9d8;
   --accent: #b45309;
 
+  --glow-peak:     none;
+  --glow-mid:      none;
+  --glow-residual: none;
+
   --sans:          'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --mono:          'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --serif-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
@@ -35,6 +39,10 @@ html[data-theme="dark"] {
   --line:   #2b261c;
   --line-2: #1f1b13;
   --accent: #e08a2e;
+
+  --glow-peak:     0 0 3px var(--accent), 0 0 10px var(--accent), 0 0 22px var(--accent);
+  --glow-mid:      0 0 3px var(--accent), 0 0 8px var(--accent);
+  --glow-residual: 0 0 4px var(--accent);
 
   color-scheme: dark;
 }
@@ -111,10 +119,7 @@ button {
   }
   5% {
     color: var(--accent);
-    text-shadow:
-      0 0 3px var(--accent),
-      0 0 10px var(--accent),
-      0 0 22px var(--accent);
+    text-shadow: var(--glow-peak);
     transform: translate(-1px, -1px);
   }
   8% {
@@ -125,14 +130,12 @@ button {
   }
   16% {
     color: var(--accent);
-    text-shadow:
-      0 0 3px var(--accent),
-      0 0 8px var(--accent);
+    text-shadow: var(--glow-mid);
     transform: translate(0, 0);
   }
   24% {
     color: inherit;
-    text-shadow: 0 0 4px var(--accent);
+    text-shadow: var(--glow-residual);
   }
 }
 
