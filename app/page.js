@@ -11,6 +11,14 @@ const LOG = [
       en: 'Built several versions, none to my taste. Kept refining until I landed on what I wanted: absolute simplicity. Will keep evolving as the days go.',
     },
   },
+  {
+    d: '2026-04-16T09:00', p: 'brand', type: 'plan',
+    title: { pt: 'nasce o fernandolimaindie', en: 'fernandolimaindie is born' },
+    body: {
+      pt: 'Decidi criar o fernandolimaindie — o nome que vai carregar as páginas onde começo a publicar sobre building in public, processo, bastidores de projeto, o que aprendo construindo. Também começo a migração do meu nickname atual pra fernandolimaindie: o antigo ninguém acerta, todo mundo confunde. Vou trocar aos poucos nas redes e no que eu controlo.',
+      en: 'Decided to create fernandolimaindie — the handle that will carry the pages where I start posting about building in public, process, project behind-the-scenes, things I learn while shipping. Also starting the migration from my current nickname to fernandolimaindie: nobody gets the old one right, everyone mixes it up. Switching it gradually across networks and anything I control.',
+    },
+  },
 ];
 
 const COPY = {
