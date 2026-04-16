@@ -1,144 +1,209 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+const LOG = [
+  {
+    d: '2026-04-16T17:30', p: 'site', type: 'ship',
+    title: { pt: 'sobrou o simples', en: 'landed on simple' },
+    body: {
+      pt: 'Criei várias versões, nada do meu gosto. Fui refinando até chegar no que me agradou: simplicidade absoluta. Vai evoluindo com os dias.',
+      en: 'Built several versions, none to my taste. Kept refining until I landed on what I wanted: absolute simplicity. Will keep evolving as the days go.',
+    },
+  },
+];
+
+const COPY = {
+  pt: {
+    toggle: 'EN',
+    header: {
+      name: 'Fernando Lima',
+      role: 'MS, Brasil',
+    },
+    sections: {
+      log: { n: '01', label: 'Log' },
+      about: {
+        n: '02',
+        label: 'Sobre',
+        body: [
+          'Programo fullstack desde 2017. Já passei por plataforma de curso, marketplace, SaaS, white-label, sistema de gestão de time. Quase sempre em Node — depois veio React, depois TypeScript, agora IA no meio do dia.',
+          'O que me prende é entender o problema do negócio antes de escrever linha. Projeto do zero ou código com dez anos de dívida, tanto faz. A parte importante começa aí.',
+          'Remoto desde o começo. Parte por escolha, parte porque moro no interior. Trabalhar com gente de outro fuso virou hábito imposto. Hoje não sei fazer diferente.',
+        ],
+      },
+      projects: {
+        n: '03',
+        label: 'Projetos',
+        items: [
+          {
+            name: 'Flavum Labs',
+            thesis: 'Empresa de projetos que cofundei.',
+            meta: 'Cofundador',
+            href: 'https://flavumlabs.com',
+          },
+          {
+            name: 'Desconta.ai',
+            thesis: 'Vendas e fidelização pelo WhatsApp para o comércio local.',
+            meta: 'Cofundador · Em progresso',
+            href: 'https://desconta.online/',
+          },
+        ],
+      },
+    },
+    contact: [
+      { k: 'GitHub', href: 'https://github.com/lnfernandobr' },
+    ],
+    footer: '© Fernando Lima · 2026',
+  },
+  en: {
+    toggle: 'PT',
+    header: {
+      name: 'Fernando Lima',
+      role: 'MS, Brazil',
+    },
+    sections: {
+      log: { n: '01', label: 'Log' },
+      about: {
+        n: '02',
+        label: 'About',
+        body: [
+          'Fullstack since 2017. Online courses, marketplaces, SaaS, white-label, team management software — been through most of it. Node first, then React, then TypeScript, now AI somewhere in the middle of every day.',
+          'What keeps me in is understanding the business problem before writing a line. Greenfield or a codebase with ten years of debt, same thing — the real part of the job starts there.',
+          'Remote from day one. Partly by choice, partly because I live far from any office. Working across time zones I don\u2019t share became a habit I didn\u2019t pick. I wouldn\u2019t know how to do it differently now.',
+        ],
+      },
+      projects: {
+        n: '03',
+        label: 'Projects',
+        items: [
+          {
+            name: 'Flavum Labs',
+            thesis: 'Projects company I co-founded.',
+            meta: 'Co-founder',
+            href: 'https://flavumlabs.com',
+          },
+          {
+            name: 'Desconta.ai',
+            thesis: 'Sales and retention over WhatsApp for local businesses.',
+            meta: 'Co-founder · In progress',
+            href: 'https://desconta.online/',
+          },
+        ],
+      },
+    },
+    contact: [
+      { k: 'GitHub', href: 'https://github.com/lnfernandobr' },
+    ],
+    footer: '© Fernando Lima · 2026',
+  },
+};
+
+function groupByMonth(entries) {
+  const out = [];
+  for (const e of entries) {
+    const ym = e.d.slice(0, 7);
+    const last = out[out.length - 1];
+    if (last && last.ym === ym) last.items.push(e);
+    else out.push({ ym, items: [e] });
+  }
+  return out;
+}
+
+function monthLabel(ym, lang) {
+  const [y, m] = ym.split('-');
+  const d = new Date(Number(y), Number(m) - 1, 1);
+  const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-US', {
+    month: 'long',
+    year: 'numeric',
+  });
+  return fmt.format(d);
+}
 
 export default function Home() {
+  const [lang, setLang] = useState('pt');
+
   useEffect(() => {
-    const observed = document.querySelectorAll('.r');
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('v');
-            io.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-    );
-    for (const el of observed) io.observe(el);
-    return () => io.disconnect();
+    const saved = typeof window !== 'undefined' && localStorage.getItem('lang');
+    if (saved === 'pt' || saved === 'en') setLang(saved);
+    else {
+      const nav = typeof navigator !== 'undefined' ? navigator.language || '' : '';
+      if (!nav.toLowerCase().startsWith('pt')) setLang('en');
+    }
   }, []);
 
-  const scrollTo = (e, id) => {
-    e.preventDefault();
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    }
+  }, [lang]);
+
+  const t = COPY[lang];
+  const toggle = () => {
+    const next = lang === 'pt' ? 'en' : 'pt';
+    setLang(next);
+    if (typeof window !== 'undefined') localStorage.setItem('lang', next);
   };
 
   return (
-    <>
-      {/* Opening */}
-      <section className="opening" id="inicio" aria-label="Abertura">
-        <div className="opening-rule" aria-hidden="true" />
+    <main className="shell">
+      <header className="head">
+        <div className="head-l">
+          <h1 className="head-name">{t.header.name}</h1>
+          <p className="head-role">{t.header.role}</p>
+        </div>
+        <button className="lang" onClick={toggle} aria-label="toggle language">
+          {t.toggle}
+        </button>
+      </header>
 
-        <p className="epigraph">
-          Desenvolvedor, empreendedor, e outras coisas que ainda estou descobrindo.
-        </p>
-
-        <p className="opening-name">Fernando Lima</p>
-
-        <nav className="opening-nav" role="navigation" aria-label="Navegação principal">
-          <a href="#quem-sou" onClick={(e) => scrollTo(e, '#quem-sou')}>quem sou</a>
-          <a href="#o-que-construo" onClick={(e) => scrollTo(e, '#o-que-construo')}>projetos</a>
-          <a href="#o-caminho" onClick={(e) => scrollTo(e, '#o-caminho')}>o caminho</a>
-          <a href="#contato" onClick={(e) => scrollTo(e, '#contato')}>contato</a>
-        </nav>
-
-        <div className="scroll-hint" aria-hidden="true"><span /></div>
-      </section>
-
-      {/* Quem sou */}
-      <div className="divider" aria-hidden="true"><div className="divider-inner" /></div>
-
-      <section className="section" id="quem-sou" aria-label="Quem sou">
-        <div className="section-inner">
-          <div className="section-rule r" aria-hidden="true" />
-          <p className="section-label r r-d1">Quem sou</p>
-
-          <div className="narrative">
-            <p className="r r-d2">
-              Desenvolvedor fullstack. Trabalho remoto do <em>MS</em>.
-            </p>
-            <p className="r r-d3">
-              Fundei a <span className="hl">Flavum Labs</span> com um amigo. A gente constrói produto próprio.
-            </p>
-          </div>
+      <section className="sec">
+        <div className="log">
+          {groupByMonth(LOG).map((group) => (
+            <div className="log-month" key={group.ym}>
+              <div className="log-month-head">
+                <span className="log-month-label">{monthLabel(group.ym, lang)}</span>
+                <span className="log-month-rule" aria-hidden />
+              </div>
+              <div className="log-entries">
+                {group.items.map((e) => (
+                  <article className="log-entry" key={e.d + e.title[lang]}>
+                    <div className="log-meta">
+                      <time className="log-date" dateTime={e.d}>{e.d.slice(0, 10)}</time>
+                      {e.d.includes('T') && (
+                        <>
+                          <span className="log-sep" aria-hidden>·</span>
+                          <span className="log-time">{e.d.slice(11, 16)}</span>
+                        </>
+                      )}
+                      <span className="log-sep" aria-hidden>·</span>
+                      <span className="log-proj">{e.p}</span>
+                      <span className="log-sep" aria-hidden>·</span>
+                      <span className={`log-type log-type-${e.type}`}>{e.type}</span>
+                    </div>
+                    <p className="log-prose">
+                      <span className="log-title">{e.title[lang]}.</span>{' '}
+                      <span className="log-body">{e.body[lang]}</span>
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* O que construo */}
-      <div className="divider" aria-hidden="true"><div className="divider-inner" /></div>
-
-      <section className="section" id="o-que-construo" aria-label="Projetos">
-        <div className="section-inner">
-          <div className="section-rule r" aria-hidden="true" />
-          <p className="section-label r r-d1">O que construo</p>
-
-          <ol className="works" role="list">
-            <li className="work-item r r-d2">
-              <div className="work-header">
-                <a href="https://flavumlabs.com" target="_blank" rel="noopener noreferrer" className="work-link">
-                  <span className="work-name">Flavum Labs</span>
-                  <span className="work-arrow" aria-hidden="true">&#8599;</span>
-                </a>
-              </div>
-              <p className="work-desc">Estúdio de produtos digitais &mdash; do conceito ao lançamento.</p>
-              <div className="work-tags">
-                <span className="work-tag">Hub de Produtos</span>
-              </div>
+      <footer className="foot">
+        <ul className="contact">
+          {t.contact.map((c) => (
+            <li key={c.k}>
+              <a href={c.href} target="_blank" rel="noopener noreferrer">
+                {c.k}
+              </a>
             </li>
-          </ol>
-        </div>
-      </section>
-
-      {/* O caminho */}
-      <div className="divider" aria-hidden="true"><div className="divider-inner" /></div>
-
-      <section className="section" id="o-caminho" aria-label="O Caminho">
-        <div className="section-inner">
-          <div className="section-rule r" aria-hidden="true" />
-          <p className="section-label r r-d1">O caminho</p>
-
-          <p className="caminho-text r r-d2">Em breve.</p>
-
-          <div className="r r-d3">
-            <span className="caminho-badge">
-              <span className="dot" aria-hidden="true" />
-              em construção
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Contato */}
-      <div className="divider" aria-hidden="true"><div className="divider-inner" /></div>
-
-      <section className="section" id="contato" aria-label="Contato">
-        <div className="section-inner">
-          <div className="section-rule r" aria-hidden="true" />
-          <p className="section-label r r-d1">Contato</p>
-
-          <div className="contato-links r r-d2">
-            <a href="https://github.com/lnfernandobr" target="_blank" rel="noopener noreferrer" className="contato-link" aria-label="Perfil no GitHub">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-              github.com/lnfernandobr
-            </a>
-            <a href="https://linkedin.com/in/lnfernandobr" target="_blank" rel="noopener noreferrer" className="contato-link" aria-label="Perfil no LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
-              </svg>
-              linkedin.com/in/lnfernandobr
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer" role="contentinfo">
-        <p className="footer-location">Fernando Lima &middot; MS &middot; 2026</p>
+          ))}
+        </ul>
+        <p className="foot-copy">{t.footer}</p>
       </footer>
-    </>
+    </main>
   );
 }
