@@ -39,17 +39,25 @@ export const metadata = {
     template: '%s | Fernando Lima',
   },
   description:
-    'Site pessoal do Fernando Lima. Log do que tenho construído e pensado.',
+    'Fernando Lima — desenvolvedor e builder. Construindo produtos end-to-end com IA e mostrando tudo no caminho.',
   applicationName: 'Fernando Lima',
   authors: [{ name: 'Fernando Lima', url: SITE_URL }],
   creator: 'Fernando Lima',
   publisher: 'Fernando Lima',
   keywords: [
     'Fernando Lima',
-    'site pessoal',
-    'log',
+    'desenvolvedor',
+    'engenheiro de software',
+    'builder',
+    'indie hacker',
     'build in public',
-    'indie',
+    'IA',
+    'inteligência artificial',
+    'produtos digitais',
+    'SaaS',
+    'Next.js',
+    'React',
+    'JavaScript',
     'Mato Grosso do Sul',
     'Brasil',
   ],
@@ -69,12 +77,14 @@ export const metadata = {
     url: SITE_URL,
     siteName: 'Fernando Lima',
     title: 'Fernando Lima',
-    description: 'Site pessoal. Log do que tenho construído e pensado.',
+    description:
+      'Desenvolvedor e builder. Construindo produtos end-to-end com IA e mostrando tudo no caminho.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fernando Lima',
-    description: 'Site pessoal. Log do que tenho construído e pensado.',
+    description:
+      'Desenvolvedor e builder. Construindo produtos end-to-end com IA e mostrando tudo no caminho.',
     creator: '@lnfernandobr',
   },
   robots: {
@@ -115,13 +125,27 @@ const personJsonLd = {
   name: 'Fernando Lima',
   alternateName: 'lnfernandobr',
   url: SITE_URL,
-  description: 'Site pessoal do Fernando Lima.',
+  description: 'Desenvolvedor e builder. Construindo produtos end-to-end com IA.',
+  jobTitle: 'Software Engineer',
+  knowsAbout: [
+    'Software Development',
+    'Artificial Intelligence',
+    'Product Development',
+    'Web Development',
+    'React',
+    'Next.js',
+  ],
+  image: `${SITE_URL}/me.jpeg`,
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'MS',
     addressCountry: 'BR',
   },
-  sameAs: ['https://github.com/lnfernandobr'],
+  sameAs: [
+    'https://github.com/lnfernandobr',
+    'https://twitter.com/lnfernandobr',
+    'https://x.com/lnfernandobr',
+  ],
 };
 
 const websiteJsonLd = {

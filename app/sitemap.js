@@ -1,11 +1,10 @@
 const SITE_URL = 'https://fernandolima.pro';
 
 export default function sitemap() {
-  const now = new Date();
   return [
     {
       url: `${SITE_URL}/`,
-      lastModified: now,
+      lastModified: new Date('2026-05-14'),
       changeFrequency: 'monthly',
       priority: 1,
       alternates: {
