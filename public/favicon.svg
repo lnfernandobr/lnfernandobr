@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    
+  </defs>
+  <rect width="32" height="32" rx="6" fill="#0d0d0d"></rect>
+  <text class="f" x="16" y="23" text-anchor="middle" font-size="20"><tspan fill="#f6f6f4">FL</tspan><tspan fill="#1b48e0">/</tspan></text>
+</svg>

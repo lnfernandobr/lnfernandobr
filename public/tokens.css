@@ -1,0 +1,93 @@
+/* ============================================================
+   fernandolimaindie — design tokens
+   Direction C · Edition
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* Color */
+  --fli-bg:       #f6f6f4;   /* page background */
+  --fli-bg-2:     #e9e9e4;   /* secondary surfaces, code blocks */
+  --fli-ink:      #0d0d0d;   /* primary text */
+  --fli-ink-soft: #5c5c58;   /* muted text, meta */
+  --fli-accent:   #1b48e0;   /* the cobalt — links, accents, the / */
+  --fli-rule:     rgba(13, 13, 13, 0.14);
+
+  /* Type */
+  --fli-font-display: "Space Grotesk", "Inter Tight", "Helvetica Neue", system-ui, sans-serif;
+  --fli-font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fli-font-body:    var(--fli-font-display);
+
+  /* Scale (rem-based, modular ~1.25) */
+  --fli-text-xs:  0.75rem;   /* 12 */
+  --fli-text-sm:  0.875rem;  /* 14 */
+  --fli-text-md:  1rem;      /* 16 */
+  --fli-text-lg:  1.25rem;   /* 20 */
+  --fli-text-xl:  1.625rem;  /* 26 */
+  --fli-text-2xl: 2.25rem;   /* 36 */
+  --fli-text-3xl: 3rem;      /* 48 */
+  --fli-text-4xl: 4.5rem;    /* 72 */
+
+  /* Tracking presets (tight headlines, neutral body, wide kicker) */
+  --fli-tracking-tight:  -0.04em;
+  --fli-tracking-tighter:-0.055em;
+  --fli-tracking-normal:  0;
+  --fli-tracking-wide:    0.24em;
+
+  /* Spacing */
+  --fli-space-1: 0.25rem;
+  --fli-space-2: 0.5rem;
+  --fli-space-3: 0.75rem;
+  --fli-space-4: 1rem;
+  --fli-space-6: 1.5rem;
+  --fli-space-8: 2rem;
+  --fli-space-12: 3rem;
+  --fli-space-16: 4rem;
+
+  /* Radius */
+  --fli-radius-sm: 4px;
+  --fli-radius-md: 8px;
+  --fli-radius-lg: 12px;
+}
+
+/* Optional helpers — drop in as-is or rename to your convention */
+.fli-body {
+  font-family: var(--fli-font-body);
+  color: var(--fli-ink);
+  background: var(--fli-bg);
+  font-size: var(--fli-text-md);
+  line-height: 1.55;
+}
+
+.fli-wordmark {
+  font-family: var(--fli-font-display);
+  font-weight: 600;
+  letter-spacing: var(--fli-tracking-tighter);
+  color: var(--fli-ink);
+}
+.fli-wordmark::after {
+  content: "/";
+  color: var(--fli-accent);
+  margin-left: 0.04em;
+}
+
+.fli-kicker {
+  font-family: var(--fli-font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--fli-tracking-wide);
+  font-size: var(--fli-text-xs);
+  color: var(--fli-ink-soft);
+}
+
+.fli-rule {
+  border: 0;
+  border-top: 1px solid var(--fli-rule);
+}
+
+.fli-link {
+  color: var(--fli-accent);
+  text-decoration: none;
+}
+.fli-link:hover { text-decoration: underline; }

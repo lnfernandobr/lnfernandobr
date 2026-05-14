@@ -1,32 +1,17 @@
-import { Geist, Geist_Mono, Instrument_Serif, Press_Start_2P } from 'next/font/google';
+import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const geist = Geist({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--sans',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--mono',
-  weight: ['300', '400', '500'],
-  display: 'swap',
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  variable: '--serif-display',
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
-
-const pressStart = Press_Start_2P({
-  subsets: ['latin'],
-  variable: '--pixel',
-  weight: ['400'],
+  weight: ['400', '500'],
   display: 'swap',
 });
 
@@ -70,6 +55,16 @@ export const metadata = {
       'x-default': '/',
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -79,6 +74,7 @@ export const metadata = {
     title: 'Fernando Lima',
     description:
       'Desenvolvedor e builder. Construindo produtos end-to-end com IA e mostrando tudo no caminho.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Fernando Lima' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -86,6 +82,7 @@ export const metadata = {
     description:
       'Desenvolvedor e builder. Construindo produtos end-to-end com IA e mostrando tudo no caminho.',
     creator: '@lnfernandobr',
+    images: ['/og.png'],
   },
   robots: {
     index: true,
@@ -106,7 +103,10 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#faf7ef',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#1b48e0' },
+    { media: '(prefers-color-scheme: dark)', color: '#1b48e0' },
+  ],
   width: 'device-width',
   initialScale: 1,
 };
@@ -164,7 +164,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="pt-BR"
-      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} ${pressStart.variable}`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
