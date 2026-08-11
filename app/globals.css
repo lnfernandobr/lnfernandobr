@@ -32,7 +32,7 @@ html {
 body {
   font-family: var(--sans);
   color: var(--ink);
-  background: radial-gradient(90% 60% at 50% -5%, var(--glow), transparent 60%), var(--bg);
+  background: radial-gradient(80% 55% at 15% 0%, var(--glow), transparent 60%), var(--bg);
   min-height: 100vh;
   min-height: 100svh;
 }
@@ -51,20 +51,28 @@ body {
   padding: 44px 22px;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 34px;
   align-items: center;
-  text-align: center;
-  gap: 22px;
   width: 100%;
-  max-width: 380px;
+  max-width: 660px;
   animation: fade 0.6s ease both;
 }
 
+/* ---------- left: info ---------- */
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 14px;
+}
+
 .avatar {
-  width: 92px;
-  height: 92px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 50%;
@@ -74,18 +82,12 @@ body {
     0 10px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
 .hi {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--ink);
 }
 
@@ -99,23 +101,21 @@ body {
   font-size: 1rem;
   line-height: 1.55;
   color: var(--muted);
-  max-width: 30ch;
+  max-width: 26ch;
 }
 
-.groups {
+/* ---------- right: panels ---------- */
+.panels {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
   width: 100%;
-  margin-top: 6px;
 }
 
-.group {
+.panel {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 10px;
-  width: 100%;
 }
 
 .label {
@@ -125,7 +125,65 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--faint);
-  text-align: center;
+}
+
+/* project card with socials inside */
+.proj-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.proj-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.proj-head:hover {
+  background: var(--card-hover);
+}
+
+.proj-socials {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px 8px;
+  border-top: 1px solid var(--rule);
+}
+
+.follow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 34px;
+  color: var(--faint);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.follow-link:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.follow-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* generic link card (contact) */
+.contact-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .link-card {
@@ -167,15 +225,13 @@ body {
   color: var(--ink);
 }
 
-.lc-dot-wrap {
-  width: 20px;
-}
-
 .pc-dot {
   width: 8px;
   height: 8px;
+  margin: 0 6px;
   border-radius: 50%;
   background: var(--accent);
+  flex-shrink: 0;
   animation: pulse 2.2s ease-out infinite;
 }
 
@@ -194,37 +250,33 @@ body {
   transition: color 0.18s ease, transform 0.18s ease;
 }
 
+.proj-head:hover .lc-arrow,
 .link-card:hover .lc-arrow {
   color: var(--accent);
   transform: translate(2px, -2px);
 }
 
-.follow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
+/* ---------- responsive ---------- */
+@media (max-width: 620px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    max-width: 360px;
+  }
 
-.follow-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  color: var(--faint);
-  transition: color 0.15s ease, transform 0.15s ease;
-}
+  .info {
+    align-items: center;
+    text-align: center;
+  }
 
-.follow-link:hover {
-  color: var(--ink);
-  transform: translateY(-2px);
-}
+  .bio {
+    max-width: 30ch;
+  }
 
-.follow-link svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+  .panels {
+    max-width: 340px;
+  }
 }
 
 @keyframes fade {
@@ -245,7 +297,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card { animation: none; }
+  .wrap { animation: none; }
   .pc-dot { animation: none; }
   .wave { animation: none; }
 }

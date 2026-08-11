@@ -52,53 +52,55 @@ const linkedinIcon = (
 export default function Home() {
   return (
     <main className="shell">
-      <div className="card">
-        <img className="avatar" src="/me.jpeg" alt="Fernando Lima" />
-
-        <div className="intro">
+      <div className="wrap">
+        <section className="info">
+          <img className="avatar" src="/me.jpeg" alt="Fernando Lima" />
           <h1 className="hi">
             Oi, sou o Fernando <span className="wave">👋</span>
           </h1>
           <p className="bio">
             Em obra: no código e na vida — e compartilhando o caminho.
           </p>
-        </div>
+        </section>
 
-        <div className="groups">
-          <section className="group">
+        <section className="panels">
+          <div className="panel">
             <span className="label">O projeto</span>
-            <a
-              className="link-card"
-              href="https://www.fazedorismo.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="lc-icon lc-dot-wrap" aria-hidden="true">
-                <span className="pc-dot" />
-              </span>
-              <span className="lc-name">fazedorismo.com</span>
-              <span className="lc-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-            <nav className="follow" aria-label="Redes do fazedorismo">
-              {fazedorismo.map(({ label, href, icon }) => (
-                <a
-                  key={href}
-                  className="follow-link"
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                >
-                  {icon}
-                </a>
-              ))}
-            </nav>
-          </section>
+            <div className="proj-card">
+              <a
+                className="proj-head"
+                href="https://www.fazedorismo.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="pc-dot" aria-hidden="true" />
+                <span className="lc-name">fazedorismo.com</span>
+                <span className="lc-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+              <nav className="proj-socials" aria-label="Redes do fazedorismo">
+                {fazedorismo.map(({ label, href, icon }) => (
+                  <a
+                    key={href}
+                    className="follow-link"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
 
-          <section className="group">
-            <span className="label">Profissional</span>
+          <div className="panel">
+            <span className="label">Contato</span>
+            <p className="contact-text">
+              Pra conversas e oportunidades profissionais, me chama no LinkedIn.
+            </p>
             <a
               className="link-card"
               href="https://www.linkedin.com/in/fernandolimaindie/"
@@ -106,13 +108,13 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <span className="lc-icon">{linkedinIcon}</span>
-              <span className="lc-name">LinkedIn</span>
+              <span className="lc-name">Falar no LinkedIn</span>
               <span className="lc-arrow" aria-hidden="true">
                 ↗
               </span>
             </a>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </main>
   );
