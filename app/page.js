@@ -57,22 +57,32 @@ export default function Home() {
   return (
     <main className="shell">
       <div className="card">
+        <img className="avatar" src="/me.jpeg" alt="Fernando Lima" />
+
         <div className="intro">
+          <h1 className="hi">
+            Oi, sou o Fernando <span className="wave">👋</span>
+          </h1>
           <p className="bio">
-            Sou o <span className="brand">Fernando</span>. Em obra: no código e
-            na vida — e compartilhando o caminho.
+            Em obra: no código e na vida — e compartilhando o caminho.
           </p>
         </div>
-
-        <div className="sep" aria-hidden="true" />
 
         <div className="groups">
           <section className="group">
             <span className="label">O projeto</span>
-            <span className="proj">
-              <span className="dot" aria-hidden="true" />
-              Construindo <span className="brand">fazedorismo.com</span>
-            </span>
+            <a
+              className="project-card"
+              href="https://www.fazedorismo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="pc-dot" aria-hidden="true" />
+              <span className="pc-name">fazedorismo.com</span>
+              <span className="pc-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
             <nav className="socials" aria-label="Redes do fazedorismo">
               {fazedorismo.map(({ label, href, icon }) => (
                 <a

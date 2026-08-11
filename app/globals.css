@@ -7,12 +7,15 @@
 }
 
 :root {
-  --bg:     #0c0c0b;
-  --ink:    #f0f0ee;
-  --muted:  #8a8a84;
-  --faint:  #63635e;
-  --accent: #6d8bff;
-  --rule:   rgba(240, 240, 238, 0.12);
+  --bg:         #0d0c0a;
+  --ink:        #f3f1ed;
+  --muted:      #9a978f;
+  --faint:      #6a675f;
+  --accent:     #6d8bff;
+  --card:       rgba(255, 255, 255, 0.035);
+  --card-hover: rgba(255, 255, 255, 0.07);
+  --rule:       rgba(243, 241, 237, 0.1);
+  --glow:       rgba(109, 139, 255, 0.1);
 
   --sans: 'Space Grotesk', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
@@ -29,7 +32,7 @@ html {
 body {
   font-family: var(--sans);
   color: var(--ink);
-  background: var(--bg);
+  background: radial-gradient(90% 60% at 50% -5%, var(--glow), transparent 60%), var(--bg);
   min-height: 100vh;
   min-height: 100svh;
 }
@@ -45,7 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px;
+  padding: 44px 22px;
 }
 
 .card {
@@ -53,40 +56,58 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 34px;
-  max-width: 440px;
+  gap: 22px;
+  width: 100%;
+  max-width: 400px;
   animation: fade 0.6s ease both;
+}
+
+.avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  box-shadow:
+    0 0 0 1px var(--rule),
+    0 0 0 4px var(--bg),
+    0 10px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+}
+
+.hi {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.4s ease-in-out 1s 2;
 }
 
 .bio {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--muted);
-  max-width: 32ch;
-}
-
-.bio .brand {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.sep {
-  width: 44px;
-  height: 1px;
-  background: var(--rule);
+  max-width: 30ch;
 }
 
 .groups {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 22px;
   width: 100%;
+  margin-top: 4px;
 }
 
 .group {
@@ -94,36 +115,64 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  width: 100%;
 }
 
 .label {
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--faint);
 }
 
-.proj {
-  display: inline-flex;
+.project-card {
+  display: flex;
   align-items: center;
-  gap: 9px;
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--muted);
+  gap: 12px;
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
 }
 
-.proj .brand {
+.project-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-2px);
+  border-color: rgba(109, 139, 255, 0.4);
+}
+
+.pc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2.2s ease-out infinite;
+}
+
+.pc-name {
+  flex: 1;
+  text-align: left;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
   color: var(--ink);
 }
 
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2.2s ease-out infinite;
+.pc-arrow {
+  font-size: 1rem;
+  color: var(--faint);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.project-card:hover .pc-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 .socials {
@@ -174,7 +223,7 @@ body {
 
 .linked span {
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 @keyframes fade {
@@ -188,7 +237,14 @@ body {
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card { animation: none; }
-  .dot { animation: none; }
+  .pc-dot { animation: none; }
+  .wave { animation: none; }
 }
