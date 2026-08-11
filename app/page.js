@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'Fernando Lima',
   description:
-    'Fernando Lima — programador em obra, no código e na vida, compartilhando o caminho. Construindo o fazedorismo.com.',
+    'Fernando Lima — programador, construindo e compartilhando projetos. Construindo o fazedorismo.com.',
 };
 
 const fazedorismo = [
@@ -59,7 +59,7 @@ export default function Home() {
             Oi, sou o Fernando <span className="wave">👋</span>
           </h1>
           <p className="bio">
-            Em obra: no código e na vida — e compartilhando o caminho.
+            Programador, construindo e compartilhando projetos.
           </p>
         </section>
 
