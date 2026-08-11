@@ -103,21 +103,12 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1b48e0' },
-    { media: '(prefers-color-scheme: dark)', color: '#1b48e0' },
-  ],
+  themeColor: '#0c0c0b',
   width: 'device-width',
   initialScale: 1,
 };
 
-const themeInitScript = `
-try {
-  var t = localStorage.getItem('theme');
-  var dark = t === 'dark';
-  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-} catch (e) {}
-`;
+const themeInitScript = `document.documentElement.setAttribute('data-theme', 'dark');`;
 
 const personJsonLd = {
   '@context': 'https://schema.org',
