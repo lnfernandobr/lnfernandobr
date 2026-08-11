@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Fernando Lima',
-  description: 'Construindo o fazedorismo.com',
+  description:
+    'Programador aprendendo a viver com mais leveza e compartilhando o caminho. Construindo o fazedorismo.com.',
 };
 
 const fazedorismo = [
@@ -56,34 +57,52 @@ export default function Home() {
   return (
     <main className="shell">
       <div className="card">
-        <p className="status">
-          <span className="dot" aria-hidden="true" />
-          Construindo <span className="brand">fazedorismo.com</span>
-        </p>
-        <nav className="socials" aria-label="Redes">
-          {fazedorismo.map(({ label, href, icon }) => (
+        <div className="intro">
+          <p className="bio">
+            Sou o <span className="brand">Fernando Lima</span>. Programador
+            aprendendo a viver com mais leveza e compartilhando o caminho.
+          </p>
+        </div>
+
+        <div className="sep" aria-hidden="true" />
+
+        <div className="groups">
+          <section className="group">
+            <span className="label">O projeto</span>
+            <span className="proj">
+              <span className="dot" aria-hidden="true" />
+              Construindo <span className="brand">fazedorismo.com</span>
+            </span>
+            <nav className="socials" aria-label="Redes do fazedorismo">
+              {fazedorismo.map(({ label, href, icon }) => (
+                <a
+                  key={href}
+                  className="social-link"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                >
+                  {icon}
+                </a>
+              ))}
+            </nav>
+          </section>
+
+          <section className="group">
+            <span className="label">Profissional</span>
             <a
-              key={href}
-              className="social-link"
-              href={href}
+              className="linked"
+              href={linkedin.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={label}
+              aria-label={linkedin.label}
             >
-              {icon}
+              {linkedin.icon}
+              <span>LinkedIn</span>
             </a>
-          ))}
-          <span className="divider" aria-hidden="true" />
-          <a
-            className="social-link"
-            href={linkedin.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={linkedin.label}
-          >
-            {linkedin.icon}
-          </a>
-        </nav>
+          </section>
+        </div>
       </div>
     </main>
   );
